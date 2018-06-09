@@ -803,6 +803,7 @@ void run_detector(int argc, char **argv)
         fprintf(stderr, "usage: %s %s [train/test/valid] [cfg] [weights (optional)]\n", argv[0], argv[1]);
         return;
     }
+    // search input arguments for GPU information & count # of GPUs available.
     char *gpu_list = find_char_arg(argc, argv, "-gpus", 0);
     char *outfile = find_char_arg(argc, argv, "-out", 0);
     int *gpus = 0;
@@ -827,6 +828,7 @@ void run_detector(int argc, char **argv)
         ngpus = 1;
     }
 
+    // search for more arguments e.g. width, height, and fps
     int clear = find_arg(argc, argv, "-clear");
     int fullscreen = find_arg(argc, argv, "-fullscreen");
     int width = find_int_arg(argc, argv, "-w", 0);
