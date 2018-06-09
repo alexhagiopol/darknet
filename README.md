@@ -68,4 +68,5 @@ YOLO detector and the author’s other neural network projects.
    looking at `cfg/yolov3-voc.cfg` to compare the network definition in that
    configuration file to the network definition in the YOLOv3 paper shown
    below:
+   
    ![network](figures/network.png)
